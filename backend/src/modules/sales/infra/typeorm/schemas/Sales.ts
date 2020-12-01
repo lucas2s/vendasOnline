@@ -1,23 +1,20 @@
-import { ObjectID } from 'mongodb';
-
 import {
+  ObjectID,
   Entity,
   Column,
   CreateDateColumn,
   UpdateDateColumn,
   ObjectIdColumn,
 } from 'typeorm';
+import Salespeople from './Salespeople';
 
 @Entity('sales')
 class Sales {
   @ObjectIdColumn()
   id: ObjectID;
 
-  @Column()
-  salespeople_id: string;
-
-  @Column()
-  name_salespeople: string;
+  @Column(type => Salespeople)
+  salespeople: Salespeople;
 
   @Column()
   value: number;

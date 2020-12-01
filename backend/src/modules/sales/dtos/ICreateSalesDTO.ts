@@ -1,5 +1,7 @@
+import Salespeople from '../infra/typeorm/schemas/Salespeople';
+
 export default interface ICreateSalesDTO {
-  salespeople: string;
+  salespeople: Salespeople;
   value: number;
   salesDate: Date;
 }
