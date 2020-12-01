@@ -1,0 +1,11 @@
+{
+  "name": "mongo",
+  "type": "mongodb",
+  "host": "localhost",
+  "port": 27017,
+  "database": "vendas_online",
+  "useUnifiedTopology": true,
+  "entities": [
+    "./src/modules/**/infra/typeorm/schemas/*.ts"
+  ]
+}
