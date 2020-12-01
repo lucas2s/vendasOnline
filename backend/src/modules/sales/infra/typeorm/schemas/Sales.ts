@@ -1,6 +1,6 @@
+import { ObjectID } from 'mongodb';
+
 import {
-  Double,
-  ObjectID,
   Entity,
   Column,
   CreateDateColumn,
@@ -14,10 +14,13 @@ class Sales {
   id: ObjectID;
 
   @Column()
-  salespeople: string;
+  salespeople_id: string;
 
   @Column()
-  value: Double;
+  name_salespeople: string;
+
+  @Column()
+  value: number;
 
   @Column()
   sales_date: Date;

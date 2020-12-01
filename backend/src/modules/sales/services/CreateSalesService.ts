@@ -1,3 +1,4 @@
+import { injectable, inject } from 'tsyringe';
 import ISalesRepository from '../repositories/ISalesRepository';
 
 import Sales from '../infra/typeorm/schemas/Sales';
@@ -8,8 +9,12 @@ interface IRequest {
   parseSalesDate: Date;
 }
 
+@injectable()
 class CreateSalesService {
-  constructor(private salesRepository: ISalesRepository) {}
+  constructor(
+    @inject('SalesRepository')
+    private salesRepository: ISalesRepository,
+  ) {}
 
   public async execute({
     salespeopleId,

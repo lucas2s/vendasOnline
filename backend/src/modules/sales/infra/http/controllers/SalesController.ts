@@ -1,10 +1,8 @@
 import { Request, Response } from 'express';
 import { parseISO } from 'date-fns';
+import { container } from 'tsyringe';
 
-import SalesRepository from '@modules/sales/infra/typeorm/repositories/SalesRepository';
 import CreateSalesService from '@modules/sales/services/CreateSalesService';
-
-const salesRepository = new SalesRepository();
 
 export default class SalesController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -12,7 +10,7 @@ export default class SalesController {
 
     const parseSalesDate = parseISO(salesDate);
 
-    const createSales = new CreateSalesService(salesRepository);
+    const createSales = container.resolve(CreateSalesService);
 
     const sales = await createSales.execute({
       salespeopleId,
