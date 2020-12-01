@@ -1,9 +1,9 @@
 {
-  "name": "mongo",
+  "name": "default",
   "type": "mongodb",
   "host": "localhost",
   "port": 27017,
-  "database": "vendas_online",
+  "database": "mongovendasonline",
   "useUnifiedTopology": true,
   "entities": [
     "./src/modules/**/infra/typeorm/schemas/*.ts"
