@@ -1,4 +1,5 @@
 import {
+  Double,
   ObjectID,
   Entity,
   Column,
@@ -17,7 +18,7 @@ class Sales {
   salespeople: Salespeople;
 
   @Column()
-  value: number;
+  value: Double;
 
   @Column()
   sales_date: Date;

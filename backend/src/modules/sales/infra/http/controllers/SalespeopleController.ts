@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
+import * as Yup from 'yup';
 
 import CreateSalespeopleService from '@modules/sales/services/CreateSalespeopleService';
 import FindSalespeopleService from '@modules/sales/services/FindSalespeopleService';
@@ -7,6 +8,15 @@ import FindSalespeopleService from '@modules/sales/services/FindSalespeopleServi
 export default class SalespeopleController {
   public async create(request: Request, response: Response): Promise<Response> {
     const { name } = request.body;
+    const data = { name };
+
+    const schema = Yup.object().shape({
+      name: Yup.string().required('Nome do vendedor é obrigatório.'),
+    });
+
+    await schema.validate(data, {
+      abortEarly: false,
+    });
 
     const createSalespeople = container.resolve(CreateSalespeopleService);
 
