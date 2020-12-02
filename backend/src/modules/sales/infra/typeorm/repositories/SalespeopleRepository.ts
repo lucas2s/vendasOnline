@@ -26,7 +26,7 @@ class SalespeopleRepository implements ISalespeopleRepository {
   public async find({
     id,
   }: IFindSalespeopleDTO): Promise<Salespeople | undefined> {
-    const salespeople = this.ormRepository.findOne(id);
+    const salespeople = await this.ormRepository.findOne(id);
 
     return salespeople;
   }

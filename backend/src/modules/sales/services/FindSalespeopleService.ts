@@ -16,7 +16,6 @@ class FindSalespeopleService {
 
   public async execute({ id }: IRequest): Promise<Salespeople | undefined> {
     const salespeople = await this.salespeopleRepository.find({ id });
-
     return salespeople;
   }
 }

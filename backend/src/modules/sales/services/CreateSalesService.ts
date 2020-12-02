@@ -2,9 +2,10 @@ import { injectable, inject } from 'tsyringe';
 import ISalesRepository from '../repositories/ISalesRepository';
 
 import Sales from '../infra/typeorm/schemas/Sales';
+import Salespeople from '../infra/typeorm/schemas/Salespeople';
 
 interface IRequest {
-  salespeopleId: string;
+  salespeople: Salespeople;
   value: number;
   parseSalesDate: Date;
 }
@@ -17,12 +18,12 @@ class CreateSalesService {
   ) {}
 
   public async execute({
-    salespeopleId,
+    salespeople,
     value,
     parseSalesDate,
   }: IRequest): Promise<Sales> {
     const sales = await this.salesRepository.create({
-      salespeople: salespeopleId,
+      salespeople,
       value,
       salesDate: parseSalesDate,
     });
