@@ -34,7 +34,10 @@ class CreateSalesService {
     }
 
     const sales = await this.salesRepository.create({
-      salespeople,
+      salespeople: {
+        salespeopleId: String(salespeople.id),
+        name: salespeople.name,
+      },
       value,
       salesDate: parseSalesDate,
     });

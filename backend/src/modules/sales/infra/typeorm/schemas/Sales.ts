@@ -7,15 +7,16 @@ import {
   UpdateDateColumn,
   ObjectIdColumn,
 } from 'typeorm';
-import Salespeople from './Salespeople';
+
+import ISalespeopleDTO from '@modules/sales/dtos/ISalespeopleDTO';
 
 @Entity('sales')
 class Sales {
   @ObjectIdColumn()
   id: ObjectID;
 
-  @Column(type => Salespeople)
-  salespeople: Salespeople;
+  @Column()
+  salespeople: ISalespeopleDTO;
 
   @Column()
   value: Double;
