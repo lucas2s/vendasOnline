@@ -4,6 +4,7 @@ import { container } from 'tsyringe';
 import * as Yup from 'yup';
 
 import CreateSalesService from '@modules/sales/services/CreateSalesService';
+import ListTopSales from '@modules/sales/services/ListTopSales';
 
 export default class SalesController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -33,6 +34,30 @@ export default class SalesController {
       salespeopleId,
       value,
       parseSalesDate,
+    });
+
+    return response.json(sales);
+  }
+
+  public async index(request: Request, response: Response): Promise<Response> {
+    const { entryDate } = request.query;
+
+    const data = { entryDate };
+
+    const schema = Yup.object().shape({
+      entryDate: Yup.date().required('Data da entrada obrigatória.'),
+    });
+
+    await schema.validate(data, {
+      abortEarly: false,
+    });
+
+    const endDate = parseISO(String(entryDate));
+
+    const salesList = container.resolve(ListTopSales);
+
+    const sales = await salesList.execute({
+      endDate,
     });
 
     return response.json(sales);
