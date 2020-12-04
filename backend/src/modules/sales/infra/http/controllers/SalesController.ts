@@ -10,7 +10,6 @@ export default class SalesController {
   public async create(request: Request, response: Response): Promise<Response> {
     const { salespeopleId, salesDate } = request.body;
     let { value } = request.body;
-    value = value.toLocaleString('pt-br', { minimumFractionDigits: 2 });
 
     const data = { salespeopleId, value, salesDate };
 
@@ -26,6 +25,7 @@ export default class SalesController {
       abortEarly: false,
     });
 
+    value = value.toFixed(2);
     const parseSalesDate = parseISO(salesDate);
 
     const createSales = container.resolve(CreateSalesService);
