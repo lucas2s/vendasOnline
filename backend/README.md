@@ -29,7 +29,7 @@
 
 <p>Neste projeto foi desenvolvido um backend com NodeJS que possibilita a realização de um cadastro de vendas.</p>
 
-<h3>Extrutura do Projeto</h3>
+<h3>Estrutura do Projeto</h3>
 
 A estrutura do projeto foi construida utilizando alguns conceitos de arquitetura de software e DDD.
 
@@ -150,10 +150,10 @@ Este serviço foi criado para possibilitar a criação de vendedores para que um
 
 ```json
 {
-    "id": "5fc8696d37dd871638ae98c3",
-    "name": "Claudio Fernando",
-    "created_at": "2020-12-03T04:28:29.307Z",
-    "updated_at": "2020-12-03T04:28:29.307Z"
+  "id": "5fc8696d37dd871638ae98c3",
+  "name": "Claudio Fernando",
+  "created_at": "2020-12-03T04:28:29.307Z",
+  "updated_at": "2020-12-03T04:28:29.307Z"
 }
 ```
 
@@ -252,4 +252,3 @@ entryDate=2020-12-03T14:42:54-02:00
 :heavy_check_mark: Configurar no arquivo ormconfig.json dentro da pasta raiz os dados do mongoDB(HOST e PORT)<br />
 :heavy_check_mark: Executar o comando yarn dev:server para iniciar o servidor da aplicação. <br />
 :heavy_check_mark: Utiliza uma ferramenta objetivo testar serviços RESTful, como por exemplo Postman ou Insomnia <br />
-

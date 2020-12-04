@@ -19,10 +19,6 @@
 </p>
 <br />
 
-Esse projeto foi construido para avaliação final do Bootcamp da <a text-decoration="none" href="https://rocketseat.com.br">:rocket: Rockeseat</a>
-
-Para esse projeto foi desenvolvido uma aplicação completa (Back-end, Front-end e Mobile) de um sistema de gerenciamento de entregas chamado Fastfeet.
-
 ## Projeto
 
 Os detalhes do projeto backend e os passos para sua execução está no readme dentro dos respectivo diretório.
