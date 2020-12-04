@@ -57,8 +57,22 @@ class ListTopSalesSalespeople {
       });
     });
 
-    results.sort((a, b) => {
-      return a.totalSales - b.totalSales;
+    results.sort((resultA, resultB) => {
+      if (resultA.totalSales < resultB.totalSales) {
+        return -1;
+      }
+      if (resultA.totalSales > resultB.totalSales) {
+        return 1;
+      }
+      if (resultA.totalSales === resultB.totalSales) {
+        if (resultA.value < resultB.value) {
+          return -1;
+        }
+        if (resultA.value > resultB.value) {
+          return 1;
+        }
+      }
+      return 0;
     });
 
     results.reverse();
