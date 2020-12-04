@@ -1,0 +1,60 @@
+D:\Projetos\JavaScript\vendasOnline\backend
+├── ormconfig.json
+├── out.txt
+├── package.json
+├── prettier.config.js
+├── README.md
+├── src
+|  ├── config
+|  ├── modules
+|  |  └── sales
+|  |     ├── dtos
+|  |     |  ├── ICreateSalesDTO.ts
+|  |     |  ├── ICreateSalespeopleDTO.ts
+|  |     |  ├── IFindSalespeopleDTO.ts
+|  |     |  ├── IListTopSalesDTO.ts
+|  |     |  └── ISalespeopleDTO.ts
+|  |     ├── infra
+|  |     |  ├── http
+|  |     |  |  ├── controllers
+|  |     |  |  |  ├── SalesController.ts
+|  |     |  |  |  └── SalespeopleController.ts
+|  |     |  |  └── routes
+|  |     |  |     ├── sales.routes.ts
+|  |     |  |     └── salespeople.routes.ts
+|  |     |  └── typeorm
+|  |     |     ├── repositories
+|  |     |     |  ├── SalespeopleRepository.ts
+|  |     |     |  └── SalesRepository.ts
+|  |     |     └── schemas
+|  |     |        ├── Sales.ts
+|  |     |        └── Salespeople.ts
+|  |     ├── repositories
+|  |     |  ├── ISalespeopleRepository.ts
+|  |     |  └── ISalesRepository.ts
+|  |     └── services
+|  |        ├── CreateSalespeopleService.ts
+|  |        ├── CreateSalesService.ts
+|  |        ├── FindSalespeopleService.ts
+|  |        └── ListTopSales.ts
+|  └── shared
+|     ├── container
+|     |  └── index.ts
+|     ├── errors
+|     |  └── AppError.ts
+|     └── infra
+|        ├── http
+|        |  ├── middlewares
+|        |  |  └── handler.ts
+|        |  ├── routes
+|        |  |  └── index.ts
+|        |  └── server.ts
+|        └── typeorm
+|           └── index.ts
+├── tsconfig.json
+├── yarn-error.log
+└── yarn.lock
+
+directory: 3194 file: 17384
+
+ignored: directory (66)

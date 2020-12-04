@@ -86,11 +86,12 @@ class ListTopSalesSalespeople {
       }).format(Number(result.value)),
       totalSales: result.totalSales.toLocaleString('pt-br'),
       dailyAverageSales: (result.totalSales / 7).toLocaleString('pt-br', {
-        maximumSignificantDigits: 3,
+        minimumFractionDigits: 3,
+        maximumFractionDigits: 3,
       }),
     }));
 
-    return topSales.slice(0, 9);
+    return topSales.slice(0, 10);
   }
 }
 
