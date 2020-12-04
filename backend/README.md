@@ -115,7 +115,9 @@ Padronização de código
 Este serviço foi criado para possibilitar a criação de vendedores para que uma venda pudesse ser realizada com a utilização do ID do vendedor</p>
 
 <p><strong>Método</strong></p>
-<p>POST</p>
+
+`POST`
+
 <p><strong>URL: </strong>/salespeople</p>
 <p><strong>Resquest</strong></p>
 
@@ -142,7 +144,9 @@ Este serviço foi criado para possibilitar a criação de vendedores para que um
 <p>Serviço responsável pela consulta do vendedor através do ID do vendedor</p>
 
 <p><strong>Método</strong></p>
-<p>GET</p>
+
+`GET`
+
 <p><strong>URL: </strong>/salespeople/:id</p>
 <p><strong>Resquest</strong></p>
 
@@ -241,7 +245,7 @@ entryDate=2020-12-03T14:42:54-02:00
 ]
 ```
 
-## 3 - Como Executar a aplicação
+## 4 - Como Executar a aplicação
 
 :heavy_exclamation_mark: Obs: Deve-se ter instalado na máquina de teste a aplicação yarn e o banco de dados mongoDB. O mongoDB também pode ser utilizado através de uma imagem via docker.
 
